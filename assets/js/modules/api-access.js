@@ -11,7 +11,6 @@ export function apiAccess(){
             return response.text()
         })   
         .then((text) => {
-            console.log(text.ok)
             let quote = JSON.parse(text)
             showInformations(quote)
             
