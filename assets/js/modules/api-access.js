@@ -1,12 +1,18 @@
-import { showInformations } from "./showInformations.js"
+import { quote, showInformations } from "./showInformations.js"
 
 export function apiAccess(){
+    quote.innerHTML=""
     displayLoading()
     fetch("https://thatsthespir.it/api")
-        .then((response) => response.text())
+        .then((response) => {
+            if(response.status === 200){
+                hideLoading()
+            } 
+            return response.text()
+        })   
         .then((text) => {
+            console.log(text.ok)
             let quote = JSON.parse(text)
-            hideLoading()
             showInformations(quote)
             
         })
@@ -15,7 +21,7 @@ export function apiAccess(){
         })
 }
 
-export function apiAgify(name){
+export async function apiAgify(name){
     let newName = ""
     for(let i = 0; i <= name.length; i++){
         if(name.charAt(i) == " " || name.charAt(i) == "'"){
@@ -24,9 +30,8 @@ export function apiAgify(name){
             newName += name.charAt(i)
         }
     }
-    
     const fetchName = (newName) => fetch("https://api.agify.io/?name=" + newName)
-    fetchName(newName)
+    return fetchName(newName)
         .then((response) => response.json())
         .then((json) =>{
             return json.age

@@ -10,6 +10,7 @@ html, body {
 
 main {
   min-height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -20,6 +21,7 @@ main {
 main .quote_page__container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 main .quote_page__container .quote-page__character {
   min-height: 300px;
