@@ -7,20 +7,19 @@ html,body{
     width: 100vw;
 }
 main{
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     background-color: black;
+    color: whitesmoke;
     .quote_page__container{
         display: flex;
-        height: 300px;
-        width: 100%;
-        // margin: 50px;
+        flex-direction: column;
         .quote-page__character{
-            height: 100%;
-            width: 500px;
+            height: 300px;
+            width: auto;
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -29,6 +28,32 @@ main{
                 height: 100px;
                 margin-top: 175px;
                 background-color: rgba(255, 0, 0, 0.7);
+            }
+        }
+        .quote-page__random-quote{
+            margin: 50px;
+            q{
+                font-size:20px;
+            }
+            figcaption{
+                margin-top: 20px;
+                font-style: italic;
+                &::before{
+                    content:"-";
+                }
+            }
+        }
+        .quote-page--button{
+            height: 50px;
+            width: 150px;
+            margin: 0 auto;
+            background: whitesmoke;
+            border: none;
+            margin-bottom: 50px;
+            cursor: pointer;
+            &:hover{
+                background-color: rgba(255, 0, 0, 0.7);
+                color: whitesmoke;
             }
         }
     }
