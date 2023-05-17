@@ -1,1 +1,1 @@
-# random-quote
+# Random Quote
