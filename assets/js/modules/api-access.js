@@ -1,7 +1,7 @@
 import { quote, showInformations } from "./showInformations.js"
 
 export function apiAccess(){
-    quote.innerHTML=""
+    quote.innerHTML=`<div id="loader" class="lds-facebook"><div></div><div></div><div></div></div>`
     displayLoading()
     fetch("https://thatsthespir.it/api")
         .then((response) => {
