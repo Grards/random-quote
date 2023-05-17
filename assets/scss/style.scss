@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100vh;
+    width: 100vw;
+}
+main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: black;
+    .quote_page__container{
+        display: flex;
+        height: 300px;
+        width: 100%;
+        // margin: 50px;
+        .quote-page__character{
+            height: 100%;
+            width: 500px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            .character__color-superposition{
+                width: 300px;
+                height: 100px;
+                margin-top: 175px;
+                background-color: rgba(255, 0, 0, 0.7);
+            }
+        }
+    }
+
+}
