@@ -11,13 +11,29 @@ export function apiAccess(){
             
         })
         .catch((error) => {
-            console.log("Terre was an error!", error)
+            console.log("Error for accessing the quote API", error)
         })
 }
 
-export function apiAgify(){
-    // const fetchName = 
-    fetch("https://api.agify.io/?name=")
+export function apiAgify(name){
+    let newName = ""
+    for(let i = 0; i <= name.length; i++){
+        if(name.charAt(i) == " " || name.charAt(i) == "'"){
+            break;
+        }else{
+            newName += name.charAt(i)
+        }
+    }
+    
+    const fetchName = (newName) => fetch("https://api.agify.io/?name=" + newName)
+    fetchName(newName)
+        .then((response) => response.json())
+        .then((json) =>{
+            return json.age
+        })
+        .catch((error) =>{
+            console.log("Error for loading the age of the author", error)
+        })
 }
 
 function displayLoading(){

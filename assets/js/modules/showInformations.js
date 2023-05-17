@@ -1,8 +1,9 @@
+import { apiAgify } from "./api-access.js"
+
 const character = document.getElementById("character")
 const quote = document.getElementById("quote")
 
 export function showInformations(informations){
-    console.log(informations)
     if(informations.photo == ""){
         informations.photo="https://m.media-amazon.com/images/I/61xNq7dsmlL._AC_UF894,1000_QL80_.jpg"
     }
@@ -15,4 +16,7 @@ export function showInformations(informations){
             <figcaption>${informations.author}</figcaption>
         </figure>
     `
+
+    apiAgify(informations.author)
+    // console.log(apiAgify(informations.author))
 }
